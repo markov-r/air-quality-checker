@@ -47,14 +47,6 @@ public class AmbeeController {
         parseCityData();
     }
 
-//    @PostConstruct
-    public void loadMockData() throws IOException { //todo extract and run mock class
-        ObjectMapper mapper = new ObjectMapper();
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("json/initial.json").getFile());
-        AirQuality aq = mapper.readValue(file, AirQuality.class);
-    }
-    
     @GetMapping
     public void parseCityData() throws IOException, URISyntaxException {
         System.out.println(System.getProperty("user.dir"));
