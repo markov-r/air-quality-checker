@@ -3,8 +3,8 @@ package com.air.quality.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ambee_air_quality")
-public class AmbeeAirQuality {
+@Table(name = "ambee_aq_data")
+public class AmbeeAqData {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,17 +17,17 @@ public class AmbeeAirQuality {
     private Double ozone;
     private Integer postalCode;
     private Long createdAt;
-    private Long updateTimestamp;
+    private Long updatedAt;
     private Double distance;
     //    private AqiInfo aqiInfo; //todo add later
     private String comment;
 
-    public AmbeeAirQuality() {
+    public AmbeeAqData() {
     }
 
-    public AmbeeAirQuality(Double latitude, Double longitude, Double no2,
-                           Double pm10, Double pm25, Double so2, Double ozone, Integer postalCode, Long createdAt,
-                           Long updateTimestamp, Double distance) {
+    public AmbeeAqData(Double latitude, Double longitude, Double no2,
+                       Double pm10, Double pm25, Double so2, Double ozone, Integer postalCode, Long createdAt,
+                       Long updatedAt, Double distance) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.no2 = no2;
@@ -37,7 +37,7 @@ public class AmbeeAirQuality {
         this.ozone = ozone;
         this.postalCode = postalCode;
         this.createdAt = createdAt;
-        this.updateTimestamp = updateTimestamp;
+        this.updatedAt = updatedAt;
         this.distance = distance;
     }
 
@@ -81,8 +81,8 @@ public class AmbeeAirQuality {
         return createdAt;
     }
 
-    public Long getUpdateTimestamp() {
-        return updateTimestamp;
+    public Long getUpdatedAt() {
+        return updatedAt;
     }
 
     public Double getDistance() {
@@ -93,58 +93,58 @@ public class AmbeeAirQuality {
         return comment;
     }
 
-    public AmbeeAirQuality withLatitude(Double latitude) {
+    public AmbeeAqData withLatitude(Double latitude) {
         this.latitude = latitude;
         return this;
     }
 
-    public AmbeeAirQuality withLongitude(Double longitude) {
+    public AmbeeAqData withLongitude(Double longitude) {
         this.longitude = longitude;
         return this;
     }
 
-    public AmbeeAirQuality withDistance(Double distance) {
+    public AmbeeAqData withDistance(Double distance) {
         this.distance = distance;
         return this;
     }
 
-    public AmbeeAirQuality withNo2(Double no2) {
+    public AmbeeAqData withNo2(Double no2) {
         this.no2 = no2;
         return this;
     }
 
-    public AmbeeAirQuality withPm10(Double pm10) {
+    public AmbeeAqData withPm10(Double pm10) {
         this.pm10 = pm10;
         return this;
     }
 
-    public AmbeeAirQuality withPm25(Double pm25) {
+    public AmbeeAqData withPm25(Double pm25) {
         this.pm25 = pm25;
         return this;
     }
 
-    public AmbeeAirQuality withSo2(Double so2) {
+    public AmbeeAqData withSo2(Double so2) {
         this.so2 = so2;
         return this;
     }
 
-    public AmbeeAirQuality withOzone(Double ozone) {
+    public AmbeeAqData withOzone(Double ozone) {
         this.ozone = ozone;
         return this;
     }
 
-    public AmbeeAirQuality withPostalCode(Integer postalCode) {
+    public AmbeeAqData withPostalCode(Integer postalCode) {
         this.postalCode = postalCode;
         return this;
     }
 
-    public AmbeeAirQuality withCreatedAt(Long createdAt) {
+    public AmbeeAqData withCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    public AmbeeAirQuality withUpdateTimestamp(Long updateTimestamp) {
-        this.updateTimestamp = updateTimestamp;
+    public AmbeeAqData withUpdatedAt(Long updatedAt) {
+        this.updatedAt = updatedAt;
         return this;
     }
 
@@ -161,14 +161,14 @@ public class AmbeeAirQuality {
                 ", ozone=" + ozone +
                 ", postalCode=" + postalCode +
                 ", createdAt=" + createdAt +
-                ", updateTimestamp=" + updateTimestamp +
+                ", updateTimestamp=" + updatedAt +
                 ", distance=" + distance +
                 ", comment='" + comment + '\'' +
                 '}';
     }
 
-    public AmbeeAirQuality build() {
-        return new AmbeeAirQuality(latitude, longitude, no2, pm10, pm25, so2, ozone,
-                postalCode, createdAt, updateTimestamp, distance);
+    public AmbeeAqData build() {
+        return new AmbeeAqData(latitude, longitude, no2, pm10, pm25, so2, ozone,
+                postalCode, createdAt, updatedAt, distance);
     }
 }
